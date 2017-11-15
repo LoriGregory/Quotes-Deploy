@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Quotes</title>
+</head>
+<body>
+    {% if messages %} {% for message in messages %}
+    <p>{{ message }}</p>
+    {% endfor %} {% endif %}
+    <h2> Welcome, {{}}</h2>
+    <a href='/index'>Logout</a>
+    {% for quote in quote %}
+    <form action="/user/create" method="POST">
+        {% csrf_token %}
+        <h2> Quoteable Quotes</h2>
+        <textarea= name ='quote' value = {{quote.author}} | {{quote.content}}>
+            Posted by:<input type='hidden' name={{user.id}}>
+            <input type='submit' name='Add to My List'>
+        <h2> Your Favorites</h2>
+        <textarea= name ='quote' value = {{quote.author}} | {{quote.content}}>
+            Posted by:<input type='hidden' name={{user_id.favorite_quotes}}>
+            <input type='submit' name='Remove from My List'>
+        <p>Contribute a Quote:</p>
+            Quoted by:<input type='text' name='user'> 
+            Message:<input type='text' name='quote'>
+    </form>
+    {% endfor %}
+</body>
+
+</html>

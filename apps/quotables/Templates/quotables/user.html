@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>User</title>
+   </head>
+   
+    <body>
+            <h2>Posts by {{ user.alias }}</h2>
+            {% for quotes in favorite_quotes %}}
+            <h2>Count: {{quotes.favorite_quotes }}</h2> 
+                <!-- # do something -->
+        <a href = '/index'>Dashboard</a> | <a href = '/index'>Logout</a> 
+       <form action ='/user', method = 'POST'>
+        {% csrf_token %}
+       <input type = 'text' name='quote' value = {{quote.author}}} {{% for quote in quote.quotes %}}
+    </form>
+</body>
+</html>
